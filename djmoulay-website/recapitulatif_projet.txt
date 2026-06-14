@@ -1,0 +1,95 @@
+========================================================================
+             RECAPITULATIF DU PROJET - SITE WEB & LINKTREE DJ MOULAY
+========================================================================
+
+Ce projet a été conçu sur-mesure pour DJ MOULAY, DJ de Rai Algérien
+de renommée internationale, afin de maximiser sa visibilité, attirer
+de la clientèle et simplifier les réservations.
+
+------------------------------------------------------------------------
+1. COORDONNÉES ET CONFIGURATIONS INTEGRÉES
+------------------------------------------------------------------------
+* Nom d'artiste : DJ MOULAY
+* Localisation : Sig, Algérie & International (سیق، الجزائر والعالم)
+* Numéro WhatsApp : +213550324525
+* E-mail de contact : contact@djmoulay.com
+* Langues : Français (FR) et Arabe (AR) avec détection et persistance.
+
+------------------------------------------------------------------------
+2. STRUCTURE DES FICHIERS DU PROJET
+------------------------------------------------------------------------
+Dossier du projet : C:\Users\Dj Moulay\.gemini\antigravity\scratch\djmoulay-website
+
+* index.html (Site Principal)
+  - Site vitrine premium bilingue.
+  - Sections : Hero (visuel de luxe), Biographie (Rai-Electro fusion),
+    Lecteur Audio (avec visualiseur de spectre interactif), Galerie de
+    performances, et Formulaire de Réservation.
+  
+* style.css (Design System & Styles)
+  - Thème sombre Obsidian Black et Gold Prestige.
+  - Animations de survol 3D et lueurs néons personnalisées.
+  - Structure responsive pour mobiles, tablettes et ordinateurs.
+  - Gestion des règles d'affichage de droite à gauche (RTL) pour l'Arabe.
+
+* main.js (Logique du Site Principal)
+  - Arrière-plan dynamique Canvas (particules et lasers dorés).
+  - Gestion des traductions FR/AR et synchronisation avec localStorage.
+  - Logique du lecteur audio et dessin du spectre audio (Canvas).
+  - Formulaire de réservation AJAX sécurisé vers contact@djmoulay.com via
+    le service gratuit FormSubmit.
+
+* links.html (Page Linktree)
+  - Page optimisée mobile-first à placer dans les biographies TikTok,
+    Instagram, Snapchat, YouTube.
+  - Regroupe les liens des réseaux sociaux avec lueurs néons.
+  - Mini lecteur audio en bas de page.
+  - Pop-up (modal) de QR Code VIP.
+
+* links.css (Styles du Linktree)
+  - Thème minimaliste sombre et mobile-first.
+  - Animations de pulsation sur le badge de disponibilité WhatsApp.
+
+* links.js (Logique du Linktree & QR Code)
+  - Générateur automatique de QR Code VIP : fusionne le QR Code généré
+    avec votre logo officiel au centre, entouré d'une bordure dorée.
+  - Bouton de téléchargement du QR Code en haute résolution PNG.
+
+* assets/ (Dossier des images et logos)
+  - logo.png : Logo officiel de DJ Moulay en blanc et noir.
+  - hero-bg.png : Fond de scène DJ premium généré par IA (Noir & Or).
+  - bio-bg.png : Image de performance live avec foule en délire.
+
+------------------------------------------------------------------------
+3. PROCEDURES ET MISES EN LIGNE
+------------------------------------------------------------------------
+
+A. POUR METTRE EN LIGNE SUR NETLIFY (Gratuit) :
+1. Créez un compte sur https://www.netlify.com/
+2. Allez dans l'onglet "Sites" et glissez-déposez le dossier de projet complet 
+   "djmoulay-website" dans l'encadré de déploiement en bas de page.
+3. Le site est instantanément en ligne sous un lien temporaire Netlify.
+
+B. POUR METTRE A JOUR LE SITE APRES UNE MODIFICATION :
+1. Ouvrez votre projet sur Netlify.
+2. Allez dans l'onglet "Deploys".
+3. Glissez-déposez à nouveau le dossier "djmoulay-website" mis à jour.
+
+C. POUR CONNECTER VOTRE DOMAINE IONOS A NETLIFY :
+1. Sur Netlify, allez dans "Site Configuration" > "Domain Management" > "Add a Domain".
+2. Saisissez votre domaine (ex: djmoulay.com).
+3. Netlify vous indiquera de pointer votre DNS.
+4. Connectez-vous sur IONOS, allez dans les paramètres DNS de votre domaine et :
+   - Modifiez l'enregistrement A (nom @) pour pointer vers l'IP de Netlify (75.2.60.5).
+   - Modifiez l'enregistrement CNAME (nom www) pour pointer vers votre adresse netlify.app.
+5. Une fois propagé, Netlify activera le HTTPS sécurisé automatiquement.
+
+D. PREMIERE UTILISATION DU FORMULAIRE :
+1. Lors du premier envoi de test du formulaire sur votre site en ligne, vous 
+   recevrez un e-mail de FormSubmit sur contact@djmoulay.com.
+2. Cliquez sur le bouton "Activate" de cet e-mail pour activer la boîte.
+3. Toutes les réservations suivantes arriveront directement dans vos e-mails.
+
+========================================================================
+                  PROJET CONÇU POUR DJ MOULAY (2026)
+========================================================================
