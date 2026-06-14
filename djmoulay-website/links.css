@@ -1,0 +1,615 @@
+/* ==========================================================================
+   DESIGN SYSTEM & THEME
+   ========================================================================== */
+:root {
+    --bg-main: #060608;
+    --bg-glass: rgba(12, 12, 16, 0.7);
+    --border-glass: rgba(255, 255, 255, 0.06);
+    
+    --color-gold: #d4af37;
+    --color-gold-gradient: linear-gradient(135deg, #f3e5ab, #d4af37, #aa7c11);
+    
+    --color-whatsapp: #25d366;
+    --color-tiktok: #00f2fe;
+    --color-tiktok-pink: #fe0979;
+    --color-youtube: #ff0000;
+    --color-snapchat: #fffc00;
+    --color-instagram: #e1306c;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    
+    --font-title: 'Syne', 'Cairo', sans-serif;
+    --font-body: 'Space Grotesk', 'Cairo', sans-serif;
+    
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-smooth: all 0.3s ease;
+}
+
+[dir="rtl"] {
+    --font-title: 'Cairo', 'Syne', sans-serif;
+    --font-body: 'Cairo', 'Space Grotesk', sans-serif;
+}
+
+/* ==========================================================================
+   BASE & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+    padding: 40px 20px 100px 20px;
+    position: relative;
+}
+
+/* Ambient glow nodes in the background */
+.glow-bg {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.15;
+}
+.glow-gold {
+    background: var(--color-gold);
+    top: -50px;
+    left: -50px;
+}
+.glow-red {
+    background: #ff3b30;
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Floating Language Widget */
+.lang-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(12, 12, 16, 0.8);
+    border: 1px solid var(--border-glass);
+    border-radius: 30px;
+    padding: 3px;
+    display: flex;
+    gap: 2px;
+}
+[dir="rtl"] .lang-selector {
+    right: auto;
+    left: 20px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.lang-btn.active {
+    background: var(--color-gold-gradient);
+    color: #000;
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINER
+   ========================================================================== */
+.links-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.profile-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #000;
+    border: 3px solid #18181b;
+    z-index: 2;
+    position: relative;
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--color-gold);
+    border-bottom-color: var(--color-gold);
+    animation: spin 3s linear infinite;
+    z-index: 1;
+}
+
+.profile-info h1 {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.verified-badge {
+    color: #2e97f2;
+    font-size: 0.95rem;
+}
+
+.profile-info .subtitle {
+    color: var(--color-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.profile-info .desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   LINKS CARD LIST
+   ========================================================================== */
+.links-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: var(--transition-bounce);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+.link-card:hover::before {
+    left: 120%;
+}
+
+.link-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    transition: var(--transition-smooth);
+}
+[dir="rtl"] .card-icon {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.card-content p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.card-arrow {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+.link-card:hover .card-arrow {
+    color: #fff;
+    transform: translateX(4px);
+}
+[dir="rtl"] .link-card:hover .card-arrow {
+    transform: translateX(-4px) rotate(180deg);
+}
+[dir="rtl"] .card-arrow {
+    transform: rotate(180deg);
+}
+
+/* Individual Social Card Glow Styles */
+.card-website:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+}
+.card-website:hover .card-icon {
+    background: var(--color-gold);
+    color: #000;
+}
+
+.card-whatsapp:hover {
+    border-color: var(--color-whatsapp);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.15);
+}
+.card-whatsapp:hover .card-icon {
+    background: var(--color-whatsapp);
+    color: #fff;
+}
+
+.card-tiktok:hover {
+    border-color: var(--color-tiktok);
+    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.15);
+}
+.card-tiktok:hover .card-icon {
+    background: #000;
+    color: #fff;
+    text-shadow: -2px -2px 0 var(--color-tiktok), 2px 2px 0 var(--color-tiktok-pink);
+}
+
+.card-youtube:hover {
+    border-color: var(--color-youtube);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.15);
+}
+.card-youtube:hover .card-icon {
+    background: var(--color-youtube);
+    color: #fff;
+}
+
+.card-snapchat:hover {
+    border-color: var(--color-snapchat);
+    box-shadow: 0 8px 20px rgba(255, 252, 0, 0.1);
+}
+.card-snapchat:hover .card-icon {
+    background: var(--color-snapchat);
+    color: #000;
+}
+
+.card-instagram:hover {
+    border-color: var(--color-instagram);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.15);
+}
+.card-instagram:hover .card-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    color: #fff;
+}
+
+/* Pulsing Badge on WhatsApp Booking */
+.badge-pulsing {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: var(--color-whatsapp);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 10px;
+    animation: cardPulse 1.5s infinite;
+}
+[dir="rtl"] .badge-pulsing {
+    right: auto;
+    left: 15px;
+}
+
+/* ==========================================================================
+   QR CODE TRIGGER SECTION & MODAL
+   ========================================================================== */
+.btn-qr-trigger {
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+.btn-qr-trigger:hover {
+    background: var(--color-gold-gradient);
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: var(--transition-bounce);
+}
+.modal-overlay.open .modal-content {
+    transform: scale(1);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.close-modal-btn:hover {
+    color: #fff;
+}
+[dir="rtl"] .close-modal-btn {
+    right: auto;
+    left: 15px;
+}
+
+.modal-content h2 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-gold);
+}
+
+.modal-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.qr-canvas-wrapper {
+    background: #fff;
+    padding: 15px;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+}
+
+#qr-composite-canvas {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.btn-download {
+    width: 100%;
+}
+
+/* ==========================================================================
+   MINI FLOATING AUDIO WIDGET
+   ========================================================================== */
+.mini-audio-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 900;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    width: 250px;
+}
+[dir="rtl"] .mini-audio-widget {
+    right: auto;
+    left: 20px;
+}
+
+.mini-vinyl {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2d2d30 0%, #18181b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 8s linear infinite;
+    animation-play-state: paused;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.mini-vinyl.playing {
+    animation-play-state: running;
+}
+
+.mini-vinyl-center {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mini-track-info {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-track-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.mini-track-artist {
+    font-size: 0.65rem;
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+.mini-play-btn {
+    background: var(--color-gold-gradient);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: #000;
+    transition: var(--transition-smooth);
+}
+.mini-play-btn:hover {
+    transform: scale(1.05);
+}
+
+.links-footer {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes cardPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding-top: 30px;
+    }
+    .mini-audio-widget {
+        left: 50% !important;
+        transform: translateX(-50%);
+        right: auto !important;
+        bottom: 15px;
+    }
+    [dir="rtl"] .mini-audio-widget {
+        left: 50% !important;
+        transform: translateX(-50%);
+        right: auto !important;
+    }
+}
+
+/* ==========================================================================
+   LOGO BACKGROUND REMOVAL (TRANSPARENCY TRICK)
+   ========================================================================== */
+img[src*="logo.png"] {
+    mix-blend-mode: screen;
+    filter: contrast(1.5) brightness(0.9);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+}

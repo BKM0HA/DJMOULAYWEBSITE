@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ MOULAY | L'Étoile du Rai Moderne | Official Website</title>
+    <!-- Meta SEO -->
+    <meta name="description" content="Site officiel de DJ Moulay, le pionnier de la fusion Rai moderne et électro. Réservez DJ Moulay pour vos événements, mariages, clubs et festivals.">
+    <meta name="keywords" content="DJ Moulay, Rai, Electro, DJ Algerien, Booking DJ, Rai moderne, Mariage Algerien, Festival">
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="DJ MOULAY | Official Website">
+    <meta property="og:description" content="Le DJ Rai numéro 1 pour vos événements exclusifs. Écoutez ses derniers mixs et réservez-le dès maintenant.">
+    <meta property="og:image" content="assets/hero-bg.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Syne:wght@400;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <!-- Background Canvas for Audio Visualizer / Ambient Lights -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Language Selector Floating Widget -->
+    <div class="lang-selector">
+        <button class="lang-btn active" id="lang-btn-fr" onclick="switchLanguage('fr')">FR</button>
+        <button class="lang-btn" id="lang-btn-ar" onclick="switchLanguage('ar')">عربي</button>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="assets/logo.png" alt="DJ Moulay Logo" class="nav-logo">
+            </a>
+            <nav class="navbar">
+                <a href="#hero" class="nav-link active" data-fr="Accueil" data-ar="الرئيسية">Accueil</a>
+                <a href="#about" class="nav-link" data-fr="Biographie" data-ar="السيرة الذاتية">Biographie</a>
+                <a href="#music" class="nav-link" data-fr="Musique" data-ar="الموسيقى">Musique</a>
+                <a href="#booking" class="nav-link" data-fr="Booking" data-ar="الحجوزات">Booking</a>
+                <a href="links.html" class="nav-link highlight" data-fr="Réseaux & QR" data-ar="الشبكات والرمز">Réseaux & QR</a>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#hero" class="mobile-link" data-fr="Accueil" data-ar="الرئيسية">Accueil</a>
+        <a href="#about" class="mobile-link" data-fr="Biographie" data-ar="السيرة الذاتية">Biographie</a>
+        <a href="#music" class="mobile-link" data-fr="Musique" data-ar="الموسيقى">Musique</a>
+        <a href="#booking" class="mobile-link" data-fr="Booking" data-ar="الحجوزات">Booking</a>
+        <a href="links.html" class="mobile-link highlight" data-fr="Réseaux & QR" data-ar="الشبكات والرمز">Réseaux & QR</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-container">
+                <img src="assets/logo.png" alt="DJ MOULAY" class="hero-logo">
+            </div>
+            <h1 class="hero-title" data-fr="L'Étoile du Rai Moderne" data-ar="نجم الراي الحديث">L'Étoile du Rai Moderne</h1>
+            <p class="hero-subtitle" data-fr="Rythmes ancestraux, basses du futur." data-ar="ألحان الأصالة، إيقاعات المستقبل.">Rythmes ancestraux, basses du futur.</p>
+            
+            <div class="hero-ctas">
+                <a href="#booking" class="btn btn-primary" data-fr="Réserver DJ Moulay" data-ar="احجز الآن">Réserver DJ Moulay</a>
+                <a href="#music" class="btn btn-secondary" data-fr="Écouter" data-ar="استمع للموسيقى">Écouter</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="assets/bio-bg.png" alt="DJ Moulay Performance" class="about-image">
+                    <div class="image-glow"></div>
+                </div>
+                <div class="about-info">
+                    <h2 class="section-title" data-fr="Biographie" data-ar="السيرة الذاتية">Biographie</h2>
+                    <div class="divider"></div>
+                    <p class="bio-text" data-fr="DJ Moulay est le pionnier incontesté de la fusion moderne entre le Rai traditionnel algérien et les sonorités électro mondiales. Originaire d'Algérie, il a su réinventer les classiques du Rai en y injectant une énergie clubbing explosive, créant un pont unique entre tradition et modernité." data-ar="دي جي مولاي هو الرائد بلا منازع للدمج الحديث entre le الراي التقليدي الجزائري وأصوات الإلكترو العالمية. ينحدر من الجزائر، وقد استطاع إعادة ابتكار كلاسيكيات الراي من خلال ضخ طاقة كلوبينغ متفجرة، خالقاً جسراً فريداً بين الأصالة والحداثة.">
+                        DJ Moulay est le pionnier incontesté de la fusion moderne entre le Rai traditionnel algérien et les sonorités électro mondiales. Originaire d'Algérie, il a su réinventer les classiques du Rai en y injectant une énergie clubbing explosive, créant un pont unique entre tradition et modernité.
+                    </p>
+                    <p class="bio-text" data-fr="Reconnu pour ses sets spectaculaires, sa technique irréprochable et sa présence scénique hors norme, il s'est imposé comme le DJ de choix pour les plus grands mariages de prestige, les festivals internationaux et les clubs les plus branchés." data-ar="معروف بحفلاته المذهلة وتقنيته الممتازة وحضوره الاستثنائي على المسرح، وقد فرض نفسه كدي جي مفضل لأكبر حفلات الزفاف الفاخرة والمهرجانات الدولية والملاهي الأكثر شهرة.">
+                        Reconnu pour ses sets spectaculaires, sa technique irréprochable et sa présence scénique hors norme, il s'est imposé comme le DJ de choix pour les plus grands mariages de prestige, les festivals internationaux et les clubs les plus branchés.
+                    </p>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <h3 class="stat-val">+100M</h3>
+                            <p class="stat-lbl" data-fr="Vues & Écoutes" data-ar="المشاهدات والاستماعات">Vues & Écoutes</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-val">+15</h3>
+                            <p class="stat-lbl" data-fr="Années d'Expérience" data-ar="سنوات الخبرة">Années d'Expérience</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-val">+500</h3>
+                            <p class="stat-lbl" data-fr="Événements Réussis" data-ar="الحفلات الناجحة">Événements Réussis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player Section -->
+    <section id="music" class="music-section">
+        <div class="section-container">
+            <h2 class="section-title text-center" data-fr="Expérience Audio & Mix" data-ar="التجربة الصوتية والميكسات">Expérience Audio & Mix</h2>
+            <div class="divider center"></div>
+            
+            <div class="music-grid">
+                <!-- Spotify Embed Player -->
+                <div class="player-card glass-panel" style="padding: 0; overflow: hidden; border-radius: 15px; border: none;">
+                    <iframe style="border-radius:15px; background: transparent;" src="https://open.spotify.com/embed/artist/3RHFZVCcl94jZRgIT51Yig?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <!-- Featured Videos / Social Previews -->
+                <div class="video-previews">
+                    <h3 class="grid-section-title" data-fr="Dernières Performances" data-ar="أحدث العروض الحية">Dernières Performances</h3>
+                    <div class="video-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <!-- Video 1 -->
+                        <a href="https://youtu.be/-DF6ug1AeUo" target="_blank" class="video-card glass-panel" style="text-decoration: none; display: block;">
+                            <div class="video-placeholder" style="position: relative;">
+                                <img src="https://img.youtube.com/vi/-DF6ug1AeUo/hqdefault.jpg" alt="Live Performance" class="video-thumb" style="width: 100%; border-radius: 10px 10px 0 0;">
+                                <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); padding: 15px; border-radius: 50%; color: #fff; font-size: 24px;">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info" style="padding: 15px;">
+                                <h4 style="margin: 0; font-size: 16px; color: #fff;">Regarder la performance</h4>
+                                <p class="platform" style="margin: 5px 0 0; color: #aaa; font-size: 14px;"><i class="fa-brands fa-youtube icon-red"></i> Cliquez pour ouvrir YouTube</p>
+                            </div>
+                        </a>
+                        <!-- Video 2 -->
+                        <a href="https://youtu.be/pGlrZoBA5Nk" target="_blank" class="video-card glass-panel" style="text-decoration: none; display: block;">
+                            <div class="video-placeholder" style="position: relative;">
+                                <img src="https://img.youtube.com/vi/pGlrZoBA5Nk/hqdefault.jpg" alt="Live Performance" class="video-thumb" style="width: 100%; border-radius: 10px 10px 0 0;">
+                                <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); padding: 15px; border-radius: 50%; color: #fff; font-size: 24px;">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info" style="padding: 15px;">
+                                <h4 style="margin: 0; font-size: 16px; color: #fff;">Regarder la performance</h4>
+                                <p class="platform" style="margin: 5px 0 0; color: #aaa; font-size: 14px;"><i class="fa-brands fa-youtube icon-red"></i> Cliquez pour ouvrir YouTube</p>
+                            </div>
+                        </a>
+                        <!-- Video 3 -->
+                        <a href="https://youtu.be/cX9DiL3eU1M" target="_blank" class="video-card glass-panel" style="text-decoration: none; display: block;">
+                            <div class="video-placeholder" style="position: relative;">
+                                <img src="https://img.youtube.com/vi/cX9DiL3eU1M/hqdefault.jpg" alt="Live Performance" class="video-thumb" style="width: 100%; border-radius: 10px 10px 0 0;">
+                                <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); padding: 15px; border-radius: 50%; color: #fff; font-size: 24px;">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info" style="padding: 15px;">
+                                <h4 style="margin: 0; font-size: 16px; color: #fff;">Regarder la performance</h4>
+                                <p class="platform" style="margin: 5px 0 0; color: #aaa; font-size: 14px;"><i class="fa-brands fa-youtube icon-red"></i> Cliquez pour ouvrir YouTube</p>
+                            </div>
+                        </a>
+                        <!-- Video 4 -->
+                        <a href="https://youtu.be/I2pKvaZrjSE" target="_blank" class="video-card glass-panel" style="text-decoration: none; display: block;">
+                            <div class="video-placeholder" style="position: relative;">
+                                <img src="https://img.youtube.com/vi/I2pKvaZrjSE/hqdefault.jpg" alt="Live Performance" class="video-thumb" style="width: 100%; border-radius: 10px 10px 0 0;">
+                                <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); padding: 15px; border-radius: 50%; color: #fff; font-size: 24px;">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info" style="padding: 15px;">
+                                <h4 style="margin: 0; font-size: 16px; color: #fff;">Regarder la performance</h4>
+                                <p class="platform" style="margin: 5px 0 0; color: #aaa; font-size: 14px;"><i class="fa-brands fa-youtube icon-red"></i> Cliquez pour ouvrir YouTube</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Client Acquisition Section -->
+    <section id="booking" class="booking-section">
+        <div class="section-container">
+            <h2 class="section-title text-center" data-fr="Réservation & Contact" data-ar="الحجز والتواصل">Réservation & Contact</h2>
+            <p class="section-subtitle text-center" data-fr="Prenez contact pour assurer une ambiance inoubliable à votre événement." data-ar="تواصل معنا لضمان أجواء لا تُنسى في مناسباتكم الفخمة.">Prenez contact pour assurer une ambiance inoubliable à votre événement.</p>
+            <div class="divider center"></div>
+
+            <div class="booking-grid">
+                <!-- Booking Info & Direct Instant Booking -->
+                <div class="booking-info-card glass-panel">
+                    <h3 class="card-title" data-fr="Discutons de votre projet" data-ar="دعنا نناقش مشروعك">Discutons de votre projet</h3>
+                    <p class="card-text" data-fr="Pour toute demande urgente de mariage, concert privé, festival ou club, vous pouvez contacter directement le management de DJ Moulay via WhatsApp pour une réponse en moins de 24h." data-ar="لأي طلب عاجل لحفلات الزفاف، الحفلات الموسيقية الخاصة، المهرjانات أو النوادي، يمكنك الاتصال مباشرة بإدارة دي جي مولاي عبر الواتساب للحصول على رد في أقل من 24 ساعة.">
+                        Pour toute demande urgente de mariage, concert privé, festival ou club, vous pouvez contacter directement le management de DJ Moulay via WhatsApp pour une réponse en moins de 24h.
+                    </p>
+                    
+                    <div class="contact-details-list">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope icon-gold"></i>
+                            <div>
+                                <span class="label">Email</span>
+                                <span class="value">contact@djmoulay.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot icon-gold"></i>
+                            <div>
+                                <span class="label" data-fr="Localisation" data-ar="الموقع">Localisation</span>
+                                <span class="value" data-fr="Sig, Algérie & International" data-ar="سيق، الجزائر والعالم">Sig, Algérie & International</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-card">
+                        <div class="whatsapp-header">
+                            <span class="pulse-green-dot"></span>
+                            <span data-fr="Management disponible en ligne" data-ar="الإدارة متوفرة متصل الآن">Management disponible en ligne</span>
+                        </div>
+                        <a href="#" id="whatsapp-direct-btn" target="_blank" class="btn btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span data-fr="Contacter via WhatsApp" data-ar="تواصل عبر الواتساب">Contacter via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dynamic Booking Form -->
+                <div class="booking-form-card glass-panel">
+                    <form id="booking-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" data-fr="Nom Complet / Organisateur" data-ar="الاسم الكامل / المنظم">Nom Complet / Organisateur</label>
+                                <input type="text" id="name" name="name" required placeholder="Ex: Karim Benhamadi">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-fr="Téléphone (WhatsApp)" data-ar="رقم الهاتف (واتساب)">Téléphone (WhatsApp)</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Ex: +213 XXXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-date" data-fr="Date de l'événement" data-ar="تاريخ الحدث">Date de l'événement</label>
+                                <input type="date" id="event-date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-type" data-fr="Type d'événement" data-ar="نوع الحدث">Type d'événement</label>
+                                <select id="event-type" name="event-type" required>
+                                    <option value="" disabled selected data-fr="Sélectionnez..." data-ar="اختر...">Sélectionnez...</option>
+                                    <option value="mariage" data-fr="Mariage Prestige" data-ar="زفاف فاخر">Mariage Prestige</option>
+                                    <option value="club" data-fr="Club / Boîte de nuit" data-ar="ملهى / نادي ليلي">Club / Boîte de nuit</option>
+                                    <option value="festival" data-fr="Festival / Concert public" data-ar="مهرجان / حفل عام">Festival / Concert public</option>
+                                    <option value="prive" data-fr="Événement Privé / Anniversaire" data-ar="حفل خاص / عيد ميلاد">Événement Privé / Anniversaire</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="location" data-fr="Ville & Pays" data-ar="المدينة والبلد">Ville & Pays</label>
+                                <input type="text" id="location" name="location" required placeholder="Ex: Oran, Algérie">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget" data-fr="Budget approximatif (€)" data-ar="الميزانية التقريبية (€)">Budget approximatif (€)</label>
+                                <input type="number" id="budget" name="budget" placeholder="Ex: 5000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="details" data-fr="Détails du projet" data-ar="تفاصيل المشروع">Détails du projet</label>
+                            <textarea id="details" name="details" rows="4" placeholder="Nombre d'invités, sonorisation requise, souhaits musicaux..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn" data-fr="Envoyer la Demande" data-ar="إرسال الطلب">Envoyer la Demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="DJ Moulay Logo">
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.tiktok.com/@djmoulay29?_r=1&_t=ZS-97ACcpbirwW" target="_blank" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://youtube.com/@djmoulay29?si=iigJMIooNEfGoviQ" target="_blank" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://snapchat.com/t/VxYM5q57" target="_blank" class="social-link" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+                <a href="https://www.instagram.com/djmoulay29?igsh=YXY0amhwaG91MG91&utm_source=qr" target="_blank" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 DJ MOULAY. All Rights Reserved. Designed for Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- HTML5 Audio Element (hidden) -->
+    <audio id="main-audio" preload="auto"></audio>
+
+    <!-- Main JavaScript File -->
+    <script src="main.js"></script>
+</body>
+</html>
